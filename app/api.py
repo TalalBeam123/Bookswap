@@ -17,7 +17,9 @@ app = FastAPI()
 
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
-
+@app.get("/")
+def home():
+    return {"status":"connection eastablished"}
 # Login functionality
 @app.post("/login")
 def login(user_credentials: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
