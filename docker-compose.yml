@@ -4,7 +4,7 @@ services:
     build: .
     command: uvicorn app.api:app --host 0.0.0.0 --port 8000
     environment:
-      DATABASE_URL: postgresql://user:db123@db:10000/bookswap
+      DATABASE_URL: postgresql://user:db123@db:22/bookswap
       SECRET_KEY: 09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7
       ALGORITHM: HS256
       ACCESS_TOKEN_EXPIRE_MINUTES: 30
@@ -21,7 +21,7 @@ services:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: db123
     ports:
-      - "10000:5432"
+      - "22:5432"
 
   pgadmin:
     container_name: pgadmin
